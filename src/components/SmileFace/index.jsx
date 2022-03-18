@@ -1,5 +1,6 @@
 import React from "react";
 import { arc } from "d3";
+import BackgroundCircle from "./BackgroundCircle";
 
 const width = 960;
 const height = 500;
@@ -23,11 +24,9 @@ const SmileFace = () => {
     <div>
       <svg width={width} height={height}>
         <g transform={`translate(${centerX},${centerY})`}>
-          <circle
-            r={centerY - strokeWidth / 2}
-            fill="yellow"
-            stroke="black"
+          <BackgroundCircle
             strokeWidth={strokeWidth}
+            radius={centerY - strokeWidth / 2}
           />
           <circle cx={-eyeOffsetX} cy={-eyeOffsetY} r={eyeRadius} />
           <circle cx={eyeOffsetX} cy={-eyeOffsetY} r={eyeRadius} />
